@@ -1,0 +1,52 @@
+﻿<Page
+    x:Class="DemoNestedStackPanel.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DemoNestedStackPanel"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel>
+        <!-- Settings -->
+        <!-- set fontsize to 40 on all controlls -->
+        <StackPanel.Resources>
+            <Style TargetType="TextBlock" >
+                <Setter Property="FontSize" Value="40"/>
+                <Setter Property="Margin" Value="20" />
+            </Style>
+            <Style TargetType="TextBox">
+                <Setter Property="FontSize" Value="40"/>
+                <Setter Property="Margin" Value="20" />
+            </Style>
+            <Style TargetType="PasswordBox">
+                <Setter Property="FontSize" Value="40"/>
+                <Setter Property="Margin" Value="20" />
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="FontSize" Value="40"/>
+                <Setter Property="Margin" Value="20" />
+            </Style>
+        </StackPanel.Resources>
+        
+        <!-- Content -->
+        <StackPanel>
+            <TextBlock Text="Log in" TextAlignment="Center"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="User name" />
+                <TextBox Name="userName" PlaceholderText="user name"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Password" />
+            <PasswordBox Name="password" PlaceholderText="password" />
+        </StackPanel>
+
+        <Button Name="login" Content="Login" Click="Login_Click" />
+        <StackPanel>
+            <TextBlock Name="output" Text="Demo output" />
+        </StackPanel>
+
+    </StackPanel>
+</Page>
